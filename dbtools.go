@@ -22,6 +22,8 @@ func decode_var(ct *sql.ColumnType, val interface{}) (interface{}, error) {
   switch val.(type) {
   case int64:
     ret = val.(int64)
+  case uint64:
+    ret = val.(uint64)
   case []uint8:
     switch ct.ScanType() {
     case reflect.TypeOf(uint8(0)):
